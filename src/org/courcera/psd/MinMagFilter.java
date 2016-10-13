@@ -1,7 +1,7 @@
 package src.org.courcera.psd;
 
 /**
- * This is MinMagFilter. Takes MIN magnitude and returnes array of quakes above or equals minMagnitude.
+ * This is MinMagFilter. Takes MIN magnitude and returns array of quakes above or equals minMagnitude.
  * 
  * @author (Igor Prus)
  * @version (0.1)

@@ -1,7 +1,7 @@
 package src.org.courcera.psd;
 
 /**
- * This is DepthFilter. Takes MIN and MAX depth and returnes array of quakes between them.
+ * This is DepthFilter. Takes MIN and MAX depth and returns array of quakes between them.
  *
  * @author (Igor Prus)
  * @version (0.1)

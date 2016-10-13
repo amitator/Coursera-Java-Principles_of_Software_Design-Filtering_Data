@@ -1,7 +1,7 @@
 package src.org.courcera.psd;
 
 /**
- * This is MagnitudeFilter. Takes MIN and MAX magnitudes and returnes array of quakes between them.
+ * This is MagnitudeFilter. Takes MIN and MAX magnitudes and returns array of quakes between them.
  *
  * @author (Igor Prus)
  * @version (0.1)

@@ -1,0 +1,21 @@
+package src.org.courcera.psd;
+
+/**
+ * This is DistanceFilter. Takes Location and MAX distance and returns true
+ * if a QuakeEntry’s distance from the given location is less than the specified maximum distance.
+ *
+ * @author (Igor Prus)
+ * @version (0.1)
+ */
+public class DistanceFilter implements Filter{
+    private Location location;
+    private double distance;
+    public DistanceFilter(Location location, double distance){
+        this.location = location;
+        this.distance = distance;
+    }
+
+    public boolean satisfies(QuakeEntry qe){
+        return qe.getLocation().distanceTo(location) < distance;
+    }
+}
