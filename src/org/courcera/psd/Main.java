@@ -8,6 +8,6 @@ package src.org.courcera.psd;
  */
 public class Main {
     public static void main(String[] args) {
-        
+
     }
 }
