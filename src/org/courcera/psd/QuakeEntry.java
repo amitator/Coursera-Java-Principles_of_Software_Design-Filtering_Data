@@ -1,3 +1,4 @@
+package src.org.courcera.psd;
 
 public class QuakeEntry implements Comparable<QuakeEntry>{
 	

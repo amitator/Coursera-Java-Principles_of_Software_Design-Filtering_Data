@@ -1,5 +1,6 @@
+package src.org.courcera.psd;
+
 import java.util.*;
-import edu.duke.*;
 
 public class EarthQuakeClient2 {
     public EarthQuakeClient2() {

@@ -1,9 +1,10 @@
+package src.org.courcera.psd;
 
 /**
- * Write a description of class MinMaxFilter here.
+ * This is MinMaxFilter. Takes MIN magnitude and returnes array of quakes above or equals minMagnitude.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Igor Prus)
+ * @version (0.1)
  */
 public class MinMagFilter implements Filter
 {
