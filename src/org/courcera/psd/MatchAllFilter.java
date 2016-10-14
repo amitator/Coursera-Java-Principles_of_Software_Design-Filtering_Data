@@ -1,7 +1,30 @@
 package src.org.courcera.psd;
 
+import java.util.ArrayList;
+
 /**
- * Created by usver on 10/14/2016.
+ * This is MatchAllFilter.
+ *
+ * @author (Igor Prus)
+ * @version (0.1)
  */
-public class MatchAllFilter {
+
+public class MatchAllFilter implements Filter{
+    private ArrayList<Filter> filters;
+    public MatchAllFilter(){
+        filters = new ArrayList<Filter>();
+    }
+
+    public void addFilter(Filter filter){
+        filters.add(filter);
+    }
+
+    public boolean satisfies(QuakeEntry qe){
+        for (Filter f : filters){
+            if (!f.satisfies(qe)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
