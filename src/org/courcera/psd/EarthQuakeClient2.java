@@ -27,11 +27,17 @@ public class EarthQuakeClient2 {
         System.out.println("quakesWithFilter()");
         System.out.println("read data for "+list.size()+" quakes");
         System.out.println("\n===============================");
-        Filter f = new MagnitudeFilter(4.0, 5.0);
-        ArrayList<QuakeEntry> minMaxMagnitude  = filter(list, f);
-        f = new DepthFilter(-35_000.0d, -12_000.0d);
-        ArrayList<QuakeEntry> depthFilter = filter(minMaxMagnitude, f);
-        for (QuakeEntry qe: depthFilter) {
+//        Filter f = new MagnitudeFilter(4.0, 5.0);
+//        ArrayList<QuakeEntry> minMaxMagnitude  = filter(list, f);
+//        f = new DepthFilter(-35_000.0d, -12_000.0d);
+//        ArrayList<QuakeEntry> depthFilter = filter(minMaxMagnitude, f);
+        //Location of Tokyo
+        Location city = new Location(35.42, 139.43);
+        Filter f = new DistanceFilter(city, 10_000_000.0d);
+        ArrayList<QuakeEntry> distFilter = filter(list, f);
+        f = new PhraseFilter("end", "Japan");
+        ArrayList<QuakeEntry> phraseFilter = filter(distFilter, f);
+        for (QuakeEntry qe: phraseFilter) {
             System.out.println(qe);
         } 
     }
