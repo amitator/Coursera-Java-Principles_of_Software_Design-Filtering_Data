@@ -27,4 +27,12 @@ public class MatchAllFilter implements Filter{
         }
         return true;
     }
+
+    public String getName(){
+        String result = "";
+        for (Filter filter : filters){
+            result = filter.getName() + " ";
+        }
+    }
+
 }
