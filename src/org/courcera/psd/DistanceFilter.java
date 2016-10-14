@@ -18,4 +18,8 @@ public class DistanceFilter implements Filter{
     public boolean satisfies(QuakeEntry qe){
         return qe.getLocation().distanceTo(location) < distance;
     }
+
+    public String getName(){
+        return this.getName();
+    }
 }

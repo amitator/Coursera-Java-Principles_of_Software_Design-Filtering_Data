@@ -18,4 +18,8 @@ public class MagnitudeFilter implements Filter{
         return qe.getMagnitude() >= minMagnitude &&
                 qe.getMagnitude() <= maxMagnitude;
     }
+
+    public String getName(){
+        return this.getName();
+    }
 }
