@@ -19,7 +19,7 @@ public class MinMagFilter implements Filter
     }
 
     public String getName(){
-        return this.getName();
+        return "MinMagnitude";
     }
 
 }

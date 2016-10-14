@@ -20,6 +20,6 @@ public class DepthFilter implements Filter{
     }
 
     public String getName(){
-        return this.getName();
+        return "Depth";
     }
 }

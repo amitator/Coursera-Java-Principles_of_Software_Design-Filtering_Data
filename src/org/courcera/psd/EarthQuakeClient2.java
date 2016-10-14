@@ -59,7 +59,10 @@ public class EarthQuakeClient2 {
         for (QuakeEntry qe : result){
             System.out.println(qe);
         }
-    }public void testMatchAllFilter2(){
+        System.out.println("\nFilter used: " + matchAllFilter.getName());
+    }
+
+    public void testMatchAllFilter2(){
         EarthQuakeParser parser = new EarthQuakeParser();
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
         String source = "data/nov20quakedatasmall.atom";

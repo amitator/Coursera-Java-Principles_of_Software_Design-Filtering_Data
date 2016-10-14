@@ -20,6 +20,6 @@ public class MagnitudeFilter implements Filter{
     }
 
     public String getName(){
-        return this.getName();
+        return "Magnitude";
     }
 }

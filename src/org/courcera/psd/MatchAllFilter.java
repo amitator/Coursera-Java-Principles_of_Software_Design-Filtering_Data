@@ -31,8 +31,9 @@ public class MatchAllFilter implements Filter{
     public String getName(){
         String result = "";
         for (Filter filter : filters){
-            result = filter.getName() + " ";
+            result = result + filter.getName() + " ";
         }
+        return result;
     }
 
 }

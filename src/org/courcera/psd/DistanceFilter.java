@@ -20,6 +20,6 @@ public class DistanceFilter implements Filter{
     }
 
     public String getName(){
-        return this.getName();
+        return "Distance";
     }
 }
