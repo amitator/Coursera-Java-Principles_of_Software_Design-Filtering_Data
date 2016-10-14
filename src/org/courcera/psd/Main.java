@@ -11,5 +11,6 @@ public class Main {
         EarthQuakeClient2 earthQuakeClient2 = new EarthQuakeClient2();
         earthQuakeClient2.quakesWithFilter();
         earthQuakeClient2.testMatchAllFilter();
+        earthQuakeClient2.testMatchAllFilter2();
     }
 }

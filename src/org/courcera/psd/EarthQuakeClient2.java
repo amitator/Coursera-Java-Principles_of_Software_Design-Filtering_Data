@@ -59,6 +59,25 @@ public class EarthQuakeClient2 {
         for (QuakeEntry qe : result){
             System.out.println(qe);
         }
+    }public void testMatchAllFilter2(){
+        EarthQuakeParser parser = new EarthQuakeParser();
+        //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
+        String source = "data/nov20quakedatasmall.atom";
+        ArrayList<QuakeEntry> list  = parser.read(source);
+        System.out.println("\n===============================");
+        System.out.println("testMatchAllFilter()");
+        System.out.println("read data for "+list.size()+" quakes");
+        System.out.println("===============================");
+        MatchAllFilter matchAllFilter = new MatchAllFilter();
+        matchAllFilter.addFilter(new MagnitudeFilter(0.0d, 3.0d));
+        //Oklahoma
+        Location city = new Location(36.1314, -95.9372);
+        matchAllFilter.addFilter(new DistanceFilter(city, 10_000_000.0d));
+        matchAllFilter.addFilter(new PhraseFilter("any", "Ca"));
+        ArrayList<QuakeEntry> result = filter(list, matchAllFilter);
+        for (QuakeEntry qe : result){
+            System.out.println(qe);
+        }
     }
 
     public void createCSV() {
