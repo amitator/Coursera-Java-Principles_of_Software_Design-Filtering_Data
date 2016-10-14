@@ -24,14 +24,17 @@ public class PhraseFilter implements Filter{
                 if (title.startsWith(whatToSearch)) {
                     return true;
                 }
+                break;
             case "end":
                 if (title.endsWith(whatToSearch)) {
                     return true;
                 }
+                break;
             case "any":
                 if (title.contains(whatToSearch)) {
                     return true;
                 }
+                break;
         }
         return false;
     }
