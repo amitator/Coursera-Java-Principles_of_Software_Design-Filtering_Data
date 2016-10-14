@@ -1,6 +1,6 @@
 package src.org.courcera.psd;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class EarthQuakeClient2 {
     public EarthQuakeClient2() {
@@ -26,7 +26,7 @@ public class EarthQuakeClient2 {
         System.out.println("\n===============================");
         System.out.println("quakesWithFilter()");
         System.out.println("read data for "+list.size()+" quakes");
-        System.out.println("\n===============================");
+        System.out.println("===============================");
 //        Filter f = new MagnitudeFilter(4.0, 5.0);
 //        ArrayList<QuakeEntry> minMaxMagnitude  = filter(list, f);
 //        f = new DepthFilter(-35_000.0d, -12_000.0d);
@@ -40,6 +40,25 @@ public class EarthQuakeClient2 {
         for (QuakeEntry qe: phraseFilter) {
             System.out.println(qe);
         } 
+    }
+
+    public void testMatchAllFilter(){
+        EarthQuakeParser parser = new EarthQuakeParser();
+        //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
+        String source = "data/nov20quakedatasmall.atom";
+        ArrayList<QuakeEntry> list  = parser.read(source);
+        System.out.println("\n===============================");
+        System.out.println("testMatchAllFilter()");
+        System.out.println("read data for "+list.size()+" quakes");
+        System.out.println("===============================");
+        MatchAllFilter matchAllFilter = new MatchAllFilter();
+        matchAllFilter.addFilter(new MagnitudeFilter(0.0d, 2.0d));
+        matchAllFilter.addFilter(new DepthFilter(-100_000.0d, -10_000.0d));
+        matchAllFilter.addFilter(new PhraseFilter("any", "a"));
+        ArrayList<QuakeEntry> result = filter(list, matchAllFilter);
+        for (QuakeEntry qe : result){
+            System.out.println(qe);
+        }
     }
 
     public void createCSV() {
